@@ -1,0 +1,105 @@
+
+
+   
+    <div *ngIf="authService.getUserDetail() as userDetail " class="flex justify-between py-2" >
+        <div class="ps-5 text-2xl "> 
+            <p>Manage products</p>
+        </div>
+        <button *ngIf="userDetail?.roles.includes('Admin')" (click)="goProduct()"class="my-2 me-5 px-5  rounded-md   hover:bg-blue-50 hover:text-blue-900 " type="submit">
+            <mat-icon class=" p-1">add</mat-icon>
+            Add Product
+        </button>
+       
+    </div>
+    <mat-divider *ngIf="authService.getUserDetail() as userDetail " class="py-2 "></mat-divider>
+
+<div class=" flex items-center justify-center">
+    <div class=" flex gap-5 w-4/5 py-5">
+        <div class="shadow-md rounded-md border-2 border-gray-200 bg-white p-5 w-2/12">
+            <p class="text-3xl py-3">Categories</p>
+            <p class=" flex shadow-md rounded-md mb-2 bg-gray-50 hover:bg-gray-300">
+                <button (click)="onSelectCanegory(0)" class="btn-cat m-2 " type="button">
+                    All
+                </button>
+            </p>
+           
+            @for (category of categories; track category  ) {
+               
+                <mat-list-item class=" ">
+                    <div  class=" flex mb-3 shadow-md rounded-md  bg-gray-50 hover:bg-gray-300">
+                        <button (click)="onSelectCanegory(category.id)" type="button" class=" m-2 btn-cat">
+                            <div matListItemTitle>{{category.name}} </div>
+                        </button>
+                    </div>
+                    
+                  
+                                    
+                </mat-list-item>
+              }
+            
+        </div>
+        
+            
+       
+        <div class="shadow-md rounded-md border-2 border-gray-200 bg-white p-5 w-10/12">
+
+
+
+            <p-carousel [value]="selectedProducts" [numVisible]="numVisibleDy" [numScroll]="1" [circular]="true"  [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
+                <ng-template let-product #item>
+                    <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 ">
+                        <div class="mb-2">
+                            <div class="relative mx-auto">
+                                <img  [src]="product.img"  [alt]="product.name" class="rounded-border"   style="height: 200px; width: 200;"/>
+                                <p-tag [value]="product.quantity" [severity]="getSeverity(product.quantity)" class="absolute" styleClass="dark:!bg-surface-900" [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                            </div>
+                        </div>
+                        <div class="mb-2 font-medium">{{ product.name }}</div>
+                        <div class="flex justify-between items-center">
+                            <div class="mt-0 font-semibold text-xl">{{ '$' + product.price }}</div>
+                            <span>
+                               
+                                <button class=" mt-2 border border-amber-600 rounded-md text-amber-600 bg-amber-50 hover:bg-amber-300 "> 
+                                    <mat-icon class="text-2xl me-4 p-1">list</mat-icon>
+                                   <span class="me-2">Detail</span> 
+                                </button>
+                                
+                            </span>
+                        </div>
+                    </div>
+                </ng-template>
+                </p-carousel>
+                
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<mat-divider class="pt-10 text-gray-50"></mat-divider>
+
+<p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="true"  [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
+<ng-template let-product #item>
+    <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 ">
+        <div class="mb-2">
+            <div class="relative mx-auto">
+                <img  [src]="product.img"  [alt]="product.name" class="rounded-border"   style="height: 200px; width: 200;"/>
+                <p-tag [value]="product.quantity" [severity]="getSeverity(product.quantity)" class="absolute" styleClass="dark:!bg-surface-900" [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+            </div>
+        </div>
+        <div class="mb-2 font-medium">{{ product.name }}</div>
+        <div class="flex justify-between items-center">
+            <div class="mt-0 font-semibold text-xl">{{ '$' + product.price }}</div>
+            <span>
+               
+                <button class=" mt-2 border border-amber-600 rounded-md text-amber-600 bg-amber-50 hover:bg-amber-300 "> 
+                    <mat-icon class="text-2xl me-4 p-1">list</mat-icon>
+                   <span class="me-2">Detail</span> 
+                </button>
+                
+            </span>
+        </div>
+    </div>
+</ng-template>
+</p-carousel>

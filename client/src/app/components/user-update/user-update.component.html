@@ -1,0 +1,49 @@
+<div class="bg-white-custom">
+    <form [formGroup]="updateUserForm" >
+
+        <mat-card class="p-6 bg-gray-100">
+            <mat-card-header class="text xl font-bold text-cyan-500">
+                <h1> {{title}}</h1>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field appearance="fill" class="bg-[#3d413d] ">
+                    <mat-label>User Id</mat-label>
+                    <input matInput formControlName="userid">
+                </mat-form-field>
+                @if(type ==='role'){
+                    <div class="py-3">
+                        <mat-form-field>
+                            <mat-label>User Role</mat-label>
+                            <mat-select formControlName="roles"  multiple>
+                                @for(item of roleList;track item){
+                                    <mat-option value="{{item.name}}">{{item.name}}</mat-option>
+                                }
+                            </mat-select>
+                            
+                        </mat-form-field>
+                    </div>
+                }
+                @else{
+                    <div class="mat-50" >
+                        <mat-label class="text-xl text-cyan-900">Is Active</mat-label>
+                        <mat-checkbox formControlName="status" ></mat-checkbox>
+                    </div>
+                }
+                             
+
+                
+            </mat-card-content>
+
+            <mat-card-actions class="flex justify-end space-x-4">
+                <div class="mat-50">
+                    <button (click)="onChangeRole()" mat-raised-button class="w-full rounded-md border-slate-200 py-2 px-3 bg-cyan-700 text-white font-bold ">Update</button>
+                </div>
+                <div class="mat-50">
+                    <button (click)="closeDialog()" mat-button class="w-full rounded-md border-slate-200 py-2 px-3 bg-zinc-600 text-white font-bold ">Cancel</button>
+                </div>
+            </mat-card-actions>
+           
+        </mat-card>
+    </form>
+
+</div>

@@ -1,0 +1,28 @@
+
+
+.bg-white-custom {
+    background-color: rgb(185, 214, 243) !important;
+   
+  }
+mat-card{
+margin: 2%;
+text-align: left;
+width: 96%;
+margin-left: 2%;
+border: 1px solid #ccc;
+background-color: #fff;
+
+
+}
+.mat-mdc-form-field{
+  margin: 1%;
+  width: 96%;
+}
+.mat-50{
+  width: 48%;
+  margin: 4%;
+  color:blue; 
+}
+.mat-input-element {
+  color: blueviolet;
+}

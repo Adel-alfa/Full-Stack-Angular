@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularNet9.API", "angularNet9.API\angularNet9.API.csproj", "{DA8CC2BA-2D8F-4787-A745-94D1B2AE975B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{DC968F39-40A3-4A07-A591-30D6BBCDA3E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA8CC2BA-2D8F-4787-A745-94D1B2AE975B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8CC2BA-2D8F-4787-A745-94D1B2AE975B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8CC2BA-2D8F-4787-A745-94D1B2AE975B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8CC2BA-2D8F-4787-A745-94D1B2AE975B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA8CC2BA-2D8F-4787-A745-94D1B2AE975B} = {DC968F39-40A3-4A07-A591-30D6BBCDA3E1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1B3FA49-A110-4D42-82A0-5BCD40380779}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  .btn-edit{
+    display: table-cell;
+    font-size: 12px;
+    margin-left: 5px;
+    min-width: 90px;
+    background-color: rgb(21, 113, 156);
+  }
+
+  .btn-delete{
+    display: table-cell;
+    font-size: 12px;
+    margin-left: 5px;
+    min-width: 90px;
+    background-color: rgb(110, 35, 104);
+  }
